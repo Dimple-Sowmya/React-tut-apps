@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Home extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <div className="container">
                 <div className="panel panel-success">
                     <div className="panel-heading">Home page Heading</div>
                     <div className="panel-body">
                         Home page Content
-                        <br/>
-                       
+                        <br />
+
                     </div>
                 </div>
             </div>
