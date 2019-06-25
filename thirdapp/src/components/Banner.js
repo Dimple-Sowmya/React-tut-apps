@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Banner = () => {
-    return(
+    return (
         <div className="banner">
             <div className="main_cover">
                 <div className="logo">Music DB</div>

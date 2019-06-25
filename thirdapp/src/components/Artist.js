@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from './Header';
 import AlbumList from './albums';
 
 const Url_Artist = "http://localhost:8900/artists"
 
 class Artist extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -13,26 +13,26 @@ class Artist extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         console.log(this.props.match.params.artistid)
-        fetch(`${Url_Artist}/${this.props.match.params.artistid}`,{
-            method:'GET'
-        }).then((response) =>  response.json())
-        .then((data) =>{
-            console.log("#####",data)
-            this.setState({
-                
-                artists:data
+        fetch(`${Url_Artist}/${this.props.match.params.artistid}`, {
+            method: 'GET'
+        }).then((response) => response.json())
+            .then((data) => {
+                console.log("#####", data)
+                this.setState({
+
+                    artists: data
+                })
             })
-        })
     }
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <Header/>
+                <Header />
                 <div className="artist_bio">
                     <div className="artist_image">
-                        <span style={{background:`url('/images/covers/${this.state.artists.cover}.jpg')`}}>
+                        <span style={{ background: `url('/images/covers/${this.state.artists.cover}.jpg')` }}>
                         </span>
                     </div>
                     <div className="bio">
@@ -41,7 +41,7 @@ class Artist extends Component {
                             {this.state.artists.bio}
                         </div>
                     </div>
-                    <AlbumList albumList={this.state.artists.albums}/>
+                    <AlbumList albumList={this.state.artists.albums} />
                 </div>
             </div>
         )
