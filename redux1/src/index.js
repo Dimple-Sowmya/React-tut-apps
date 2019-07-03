@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import reducers from './reducer';
+import MoviesList from './container/movies_list';
+import { Provider} from 'react-redux';
+import store from './store';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+
 
 ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
-        <App />
+    <Provider store={store}>
+        <MoviesList/>
     </Provider>, document.getElementById('root'));
